@@ -1,0 +1,1 @@
+1. When they say “Small Robot” it needs to either fit through a 50cm diameter hole or you have to literary manually lower the robot vertically through a 60cm x 60cm box. The base (or any way the robot entering the hole) just needs to be 60cm x 60cm other wise its up to you.
