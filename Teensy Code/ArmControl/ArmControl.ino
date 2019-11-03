@@ -41,8 +41,8 @@ void loop() {
   printTime = millis();
   long incramentTime = 4000; // for testing, not relevant for operation
 
-  float armDemand[2] = {0, 0}; // demand for the two arm motors - in degrees
-  float baseDemand = 0;  // demand for the base motor - in degrees
+  float armDemand[2] = {40, 40}; // demand for the two arm motors - in degrees
+  float baseDemand = 30;  // demand for the base motor - in degrees
   
  
 

@@ -17,3 +17,5 @@ void updateMotorPower(float *demandAngle);
 void moveToZero();
 void findVelSetting(float *demandAngle);
 void updateBasePosition(float demandAngle, bool datum = false);
+void shoulderCount();
+void elbowCount();

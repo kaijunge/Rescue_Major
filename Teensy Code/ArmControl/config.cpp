@@ -22,6 +22,9 @@ void pinSetting() {
   pinMode(mainLink_INA[1], OUTPUT);
   pinMode(mainLink_INB[1], OUTPUT);
 
+  attachInterrupt(digitalPinToInterrupt(ENCODER_S_1), shoulderCount, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(ENCODER_E_2), elbowCount, CHANGE);
+  
 }
 
 

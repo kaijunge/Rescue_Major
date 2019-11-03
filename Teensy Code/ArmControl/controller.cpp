@@ -60,19 +60,13 @@ bool velControl = false; // not optimised yet!
 bool maxVelCutoff = true; 
 bool maxAccCutoff = true;
 
-// counting the ticks for the shoulder and elbow motors
-void count(bool *dir) {
-  
-  currentEncoderState[0] = digitalRead(ENCODER_S_1);
-  currentEncoderState[1] = digitalRead(ENCODER_E_2);
+// counting the ticks for the shoulder and elbow motors via interrupts
+void shoulderCount() {
+  dir[0] == forward ?  rawEncoderCount[0] += 1 : rawEncoderCount[0] -= 1;
+}
 
-  for(int i=0; i<2; i++) {
-    if(currentEncoderState[i] != storedEncoderState[i]) {
-      dir[i] == forward ?  rawEncoderCount[i] += 1 : rawEncoderCount[i] -= 1;
-      storedEncoderState[i] = currentEncoderState[i];
-    }
-  }
-
+void elbowCount() {
+  dir[1] == forward ?  rawEncoderCount[1] += 1 : rawEncoderCount[1] -= 1;
 }
 
 // Print errors and stuff 
@@ -153,9 +147,6 @@ void updateBasePosition(float demandAngle, bool datum) {
 
 // Update power and direction
 void updateMotorPower(float *demandAngle) {
-
-  // count steps
-  count(dir);
 
   // Velocity and acceleration monitoring
    if(micros() - loopCountTime > velMeasureTime) {

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "controller.h"
+
 /*
  *  PINS
  */
@@ -25,10 +27,10 @@ const int closedEndStop[2]  = {20, 21};
 // Encoders
 #define BASE_POT 33
 
-#define ENCODER_S_1 31
-#define ENCODER_S_2 32
-#define ENCODER_E_1 29
-#define ENCODER_E_2 30
+#define ENCODER_S_1 31 
+#define ENCODER_S_2 32// not using this
+#define ENCODER_E_1 29// not using this
+#define ENCODER_E_2 30 
 
 
 /*
